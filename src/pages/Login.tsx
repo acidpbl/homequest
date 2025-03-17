@@ -16,13 +16,13 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const { user } = useAuth();
+  const { user, loading } = useAuth();
 
   useEffect(() => {
-    if (user) {
-      navigate("/");
+    if (!loading && user) {
+      navigate("/dashboard");
     }
-  }, [user, navigate]);
+  }, [user, loading, navigate]);
 
   const handleEmailLogin = async (e: React.FormEvent) => {
     e.preventDefault();

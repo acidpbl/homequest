@@ -1,11 +1,13 @@
 import { Link, useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "@/services/firebase";
-import { Scroll, LogOut, User } from "lucide-react";
+import { Scroll, LogOut, User, Crown } from "lucide-react";
 import Button from "./Button";
+import { useAuth } from "@/contexts/AuthProvider";
 
 const Sidebar = () => {
   const navigate = useNavigate();
+  const { user } = useAuth();
 
   const handleLogout = async () => {
     await signOut(auth);
@@ -28,6 +30,13 @@ const Sidebar = () => {
               <User size={20} /> Perfil
             </li>
           </Link>
+          {user?.isAdmin && (
+            <Link to="/admin" className="outline-amber-500">
+              <li className="flex gap-4 items-center pl-4 w-full rounded bg-transparent hover:bg-violet-700 transition-colors ease-linear p-2">
+                <Crown size={20} /> Admin
+              </li>
+            </Link>
+          )}
         </ul>
       </nav>
 
