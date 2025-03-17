@@ -28,8 +28,11 @@ const Profile = () => {
   }
 
   return (
-    <div className="flex flex-col px-12 py-8 bg-violet-200 h-screen">
-      <div className="flex gap-4">
+    <div className="bg-violet-100 h-screen max-h-screen flex flex-col">
+      <div className="py-8 px-12 bg-violet-400">
+        <h1 className="text-2xl font-bold text-violet-950">Perfil</h1>
+      </div>
+      <div className="py-8 px-12 bg-violet-200 flex gap-6 h-full">
         <img
           src={user.avatar || "https://i.imgur.com/uZ117ol.jpeg"}
           alt="Avatar"

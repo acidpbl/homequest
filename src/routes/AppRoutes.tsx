@@ -4,6 +4,8 @@ import Dashboard from "@/pages/Dashboard";
 import Profile from "@/pages/Profile";
 import Login from "@/pages/Login";
 import PrivateRoute from "./PrivateRoute";
+import AdminRoute from "./AdminRoute";
+import Admin from "@/pages/Admin";
 
 const AppRoutes = () => {
   const { user } = useAuth();
@@ -18,6 +20,10 @@ const AppRoutes = () => {
           <Route path="/" element={<Dashboard />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/profile" element={<Profile />} />
+        </Route>
+
+        <Route element={<AdminRoute />}>
+          <Route path="/admin" element={<Admin />} />
         </Route>
 
         {/* Redirecionamento caso a rota não exista */}

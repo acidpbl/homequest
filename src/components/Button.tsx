@@ -11,10 +11,10 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 export default function Button(props: ButtonProps) {
   const variants = {
     primary:
-      "bg-violet-600 text-violet-200 hover:bg-violet-800 hover:text-violet-300",
+      "bg-violet-600 text-violet-100 hover:bg-violet-800 hover:text-violet-200",
     secondary:
       "bg-violet-300 text-violet-600 hover:bg-violet-400 hover:text-violet-700",
-    danger: "bg-red-500 text-red-200 hover:bg-red-700 hover:text-red-300",
+    danger: "bg-red-500 text-red-100 hover:bg-red-700 hover:text-red-200",
   };
   return (
     <button

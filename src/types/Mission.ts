@@ -1,3 +1,5 @@
+import type { Timestamp } from "firebase/firestore";
+
 export type MissionStatus = "pendente" | "concluída" | "expirada";
 
 export type Mission = {
@@ -5,10 +7,10 @@ export type Mission = {
   title: string;
   description: string;
   assignedTo: string[];
-  createdAt: Date;
-  dueDate: Date;
+  createdAt: Timestamp;
+  dueDate: Timestamp;
   status: MissionStatus;
   points: number;
-  category?: string;
+  category?: "limpeza" | "contas" | "geral";
   completedBy?: string;
-}
+};
