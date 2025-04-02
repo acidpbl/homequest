@@ -78,7 +78,9 @@ export default function Admin() {
       }
 
       // Adicionar missão se não existir
-      const dueDateTimestamp = Timestamp.fromDate(new Date(dueDate));
+      const dueDateTimestamp = Timestamp.fromDate(
+        new Date(`${dueDate}T00:00:00`)
+      );
 
       await addDoc(missionsRef, {
         title,
